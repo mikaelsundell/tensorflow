@@ -968,7 +968,7 @@ def _create_symlink(src, dest, visibility = None):
         outs = [src],
         srcs = [dest],
         output_to_bindir = 1,
-        cmd = "ln -sf $$(realpath --relative-to=$(RULEDIR) $<) $@",
+        cmd = "ln -sf $$(realpath.py $(RULEDIR) $<) $@",
         visibility = visibility,
     )
 
